@@ -52,4 +52,18 @@ public class Main {
             }
         }
     }
+    // In ascending order
+    public static void printDeadlinesUsingStreams(ArrayList<Task> taskData){
+        taskData.stream()
+                .filter((s)-> s instanceof Deadline)
+                .sorted((a,b)-> a.getDescription().toLowerCase().compareTo(b.getDescription().toLowerCase()))
+                .forEach(System.out::println);
+    }
+    public static ArrayList<Task> filterByString(ArrayList<Task> taskData, String filterString){
+        ArrayList<Task> filteredTaskList = (ArrayList<Task>)taskData.stream()
+                .filter((s) -> s.getDescription().contains(filterString))
+                .collect(toList());
+
+        return filteredTaskList;
+    }
 }
