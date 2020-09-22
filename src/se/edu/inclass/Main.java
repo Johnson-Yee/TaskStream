@@ -5,8 +5,11 @@ import se.edu.inclass.task.Deadline;
 import se.edu.inclass.task.Task;
 import se.edu.inclass.task.TaskNameComparator;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 public class Main {
 
